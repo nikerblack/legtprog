@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.letsprog.learning</groupId>
+  <artifactId>ejb3-server-client-ear</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>ear</packaging>
+  <name>ejb3-server-client-ear</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.letsprog.learning</groupId>
+			<artifactId>ejb3-server-war</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>com.letsprog.learning</groupId>
+			<artifactId>ejb3-remote-client-0-war</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>war</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.10.1</version>
+				<configuration>
+                    <applicationName>${project.artifactId}</applicationName>
+					<version>7</version>
+					<generateApplicationXml>true</generateApplicationXml>
+					<defaultJavaBundleDir>lib/</defaultJavaBundleDir>
+					<skinnyWars>true</skinnyWars>
+					<initializeInOrder>true</initializeInOrder>
+					<modules>
+						<webModule>
+							<groupId>com.letsprog.learning</groupId>
+							<artifactId>ejb3-server-war</artifactId>
+							<bundleFileName>ejb3-server-war.war</bundleFileName>
+						</webModule>
+						<webModule>
+							<groupId>com.letsprog.learning</groupId>
+							<artifactId>ejb3-remote-client-0-war</artifactId>
+							<bundleFileName>ejb3-local-client-war.war</bundleFileName>
+						</webModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
