@@ -1,0 +1,42 @@
+.svn
+.externalToolBuilders
+log
+*.log*
+.classpath
+.project
+.settings
+.metadata
+target
+*/target/**
+*/target/classes/**
+bin
+*.cvsignore
+*.jar
+*.class
+*.releaseBackup
+.scannerwork
+
+# Exclude Netbeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+# Exclude JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
+
+## Directory-based project format
+.idea/
+.recommenders/
+*.iml
+.vscode/
+jboss.xml
+.project
+.classpath
+.settings
+/bin/
+.idea/
+*iml
+*.MF
